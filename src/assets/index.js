@@ -43,7 +43,7 @@ import cpp from "./cpp.png"
 import java from "./java.png"
 import python from "./python.png"
 import express from "./python.png"
-import next from "./next.png"
+import next from "./Next.png"
 import mysql from "./mysql.png"
 
 export {
