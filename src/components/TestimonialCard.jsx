@@ -1,19 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-export interface Testimonial {
-    testimonial: string;
-    name: string;
-    designation: string;
-    company: string;
-  }
-const TestimonialCard: React.FC<Testimonial> = ({
-  testimonial,
-  name,
-  designation,
-  company,
-}) => {
-  const getInitials = (name: string): string => {
+const TestimonialCard = ({ testimonial, name, designation, company }) => {
+  const getInitials = (name) => {
     return name
       .split(' ')
       .map((word) => word[0])
