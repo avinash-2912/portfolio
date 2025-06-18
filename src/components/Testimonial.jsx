@@ -101,7 +101,7 @@ const Testimonials = () => {
         <div className={`bg-tertiary rounded-2xl p-8 ${styles.padding} min-h-[250px]`}>
           <motion.div variants={textVariant()} initial="hidden" animate="show">
             <p className={`${styles.sectionSubText} text-lg`}>What others say</p>
-            <h2 className={`${styles.sectionHeadText} text-4xl`}>Testimonials</h2>
+            <h2 className="text-white font-black md:text-[50px] sm:text-[40px] xs:text-[40px] text-[30px]">Testimonials</h2>
           </motion.div>
         </div>
 
