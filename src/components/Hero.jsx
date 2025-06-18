@@ -163,7 +163,7 @@ const Hero = () => {
 
             <div className="relative z-10">
               <motion.a
-                href="https://drive.google.com/file/d/1pbMvouas4FZ_s0ohk_2rC2OH7PZBn5Ih/view?usp=drive_link"
+                href="https://drive.google.com/file/d/1Ha6zyvrdX_I6Icgwg32Oi7DAVfH--NBs/view?usp=drive_link"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block text-white hover:text-[#915EFF] cursor-pointer"
