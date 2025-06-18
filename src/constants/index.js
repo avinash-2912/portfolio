@@ -191,6 +191,13 @@ const testimonials = [
     company: "Abhay Education Private Limited",
     image: "https://via.placeholder.com/150",
   },
+  {
+    testimonial: "Very talented and hard working person,quick learner and he always take full responsibility and never give excuses.",
+    name: "Shivanshu Gupta",
+    designation: "CTO",
+    company: "Abhay Education Private Limited",
+    image: "https://via.placeholder.com/150",
+  },
 
 ];
 
