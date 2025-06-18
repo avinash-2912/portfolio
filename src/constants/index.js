@@ -33,7 +33,7 @@ import {
   cpp
 } from "../assets";
 
-import { Monitor,Server,Bot,BrainCircuit} from 'lucide-react';
+import { Monitor, Server, Bot, BrainCircuit } from 'lucide-react';
 
 
 
@@ -157,14 +157,17 @@ const experiences = [
     company_name: "Abhay Education Pvt. Ltd.",
     icon: Tutorlancer, // Replace with company logo if available
     iconBg: "#E6DEDD",
-    date: "December 2024 - Present",
+    date: "December 2024 - June 2025",
     points: [
-      "Revamped website UI using React, TypeScript, Tailwind CSS, and Material-UI, increasing engagement by 25%.",
-      "Integrated Twilio SDK for calling functionality, supporting the sales team with seamless communication.",
-      "Automated data extraction (Web Scrapping) with Node.js, Puppeteer, MongoDB and LLM-powered categorization and analysis (DeepSeek, Ola Krutrim), cutting manual effort by 60%.",
-      "Implemented SEO best practices, improving the website's search engine rankings and overall performance metrics by 35%.",
-      "Collaborated on multiple projects creating 2-3 websites from scratch, brainstorming ideas, implementing features, and fixing bugs."
-    ],
+      "Revamped the UI of TheMusicLancer and TheTutorLancer using React, Next.js, TypeScript, Tailwind CSS, and MUI—boosting SEO, performance, and user retention by over 30%.",
+      "Implemented SEO best practices that improved search engine visibility and increased engagement by 35%.",
+      "Engineered scalable modules for an AI-powered CRM—including Order, Client, Expert, Agent, and Ticket Management—using the MERN stack and built for SaaS deployment.",
+      "Built dynamic dashboards for clients and experts with real-time tracking, role-based workflows, and collaboration tools, enhancing operational transparency and efficiency.",
+      "Integrated voice support using Twilio and ElevenLabs SDKs, enabling seamless sales communication and an AI support agent to handle voice-based queries.",
+      "Automated lead generation and data extraction with Node.js, Puppeteer, and MongoDB, and implemented LLM-based content processing (OpenAI, DeepSeek, Ola Krutrim), reducing manual work by 60%.",
+      "Collaborated on more than 3 end-to-end web applications—participating in feature planning, development, debugging, and iterative delivery."
+    ]
+
   },
   {
     title: "Backend Developer Intern",
@@ -188,7 +191,7 @@ const testimonials = [
     company: "Abhay Education Private Limited",
     image: "https://via.placeholder.com/150",
   },
-  
+
 ];
 
 
