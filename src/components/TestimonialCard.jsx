@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { X } from 'lucide-react';
 
-const TestimonialCard = ({ testimonial, name, designation, company }) => {
+const TestimonialCard = ({ testimonial, name, designation, company, image }) => {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  
   const getInitials = (name) => {
     return name
       .split(' ')
@@ -11,30 +14,120 @@ const TestimonialCard = ({ testimonial, name, designation, company }) => {
   };
 
   const initials = getInitials(name);
+  
+  // Truncate testimonial text for card display
+  const truncateText = (text, maxLength = 150) => {
+    if (text.length <= maxLength) return text;
+    return text.substring(0, maxLength).trim() + '...';
+  };
+
+  const shouldShowReadMore = testimonial.length > 150;
 
   return (
-    <motion.div
-      className="bg-black-200 p-6 rounded-2xl w-full h-[350px] flex flex-col shadow-lg"
-      whileHover={{ y: -5, transition: { duration: 0.3 } }}
-    >
-      <p className="text-white font-black text-4xl">"</p>
-      <div className="mt-2 flex-grow flex flex-col">
-        <p className="text-white tracking-wider text-lg flex-grow">{testimonial}</p>
-        <div className="mt-6 flex justify-between items-center gap-2">
-          <div className="flex-1 flex flex-col">
-            <p className="text-white font-medium text-base">
-              <span className="text-primary">@</span> {name}
+    <>
+      <motion.div 
+        className="bg-black-200 p-6 rounded-3xl w-full h-[280px] flex flex-col justify-between"
+        whileHover={{ scale: 1.02 }}
+        transition={{ duration: 0.2 }}
+      >
+        <div className="flex-1">
+          <div className="text-white font-black text-[48px] leading-none">"</div>
+          <div className="mt-1 flex-1">
+            <p className="text-white tracking-wider text-[16px] leading-relaxed">
+              {truncateText(testimonial)}
             </p>
-            <p className="mt-1 text-gray-400 text-sm">
+            {shouldShowReadMore && (
+              <button
+                onClick={() => setIsDialogOpen(true)}
+                className="text-blue-400 hover:text-blue-300 text-sm font-medium mt-2 transition-colors duration-200"
+              >
+                Read More
+              </button>
+            )}
+          </div>
+        </div>
+        
+        <div className="mt-4 flex justify-between items-center gap-1">
+          <div className="flex-1">
+            <p className="text-white font-medium text-[14px]">
+              <span className="blue-text-gradient">@ {name}</span>
+            </p>
+            <p className="mt-1 text-secondary text-[12px]">
               {designation} of {company}
             </p>
           </div>
-          <div className="w-10 h-10 rounded-full bg-blue-gradient flex items-center justify-center shadow-md">
+          
+          <div className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center flex-shrink-0">
             <span className="text-white font-bold text-sm">{initials}</span>
           </div>
         </div>
-      </div>
-    </motion.div>
+      </motion.div>
+
+      {/* Dialog Overlay */}
+      {isDialogOpen && (
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4"
+          onClick={() => setIsDialogOpen(false)}
+        >
+          <motion.div 
+            className="bg-[#1a1a2e] rounded-2xl p-8 max-w-2xl w-full max-h-[80vh] overflow-y-auto relative"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.8, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close Button */}
+            <button
+              onClick={() => setIsDialogOpen(false)}
+              className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors duration-200"
+            >
+              <X size={24} />
+            </button>
+
+            {/* Dialog Content */}
+            <div className="pr-8">
+              <div className="text-white font-black text-[72px] leading-none mb-4">"</div>
+              
+              <div className="space-y-6">
+                <p className="text-white text-lg leading-relaxed tracking-wide">
+                  {testimonial}
+                </p>
+                
+                <div className="border-t border-gray-600 pt-6">
+                  <div className="flex items-center gap-4">
+                    <div className="w-16 h-16 rounded-full bg-blue-600 flex items-center justify-center">
+                      <span className="text-white font-bold text-xl">{initials}</span>
+                    </div>
+                    
+                    <div>
+                      <p className="text-white font-bold text-xl">
+                        <span className="blue-text-gradient">{name}</span>
+                      </p>
+                      <p className="text-gray-300 text-base mt-1">
+                        {designation}
+                      </p>
+                      <p className="text-gray-400 text-sm">
+                        {company}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      )}
+
+      <style jsx>{`
+        .blue-text-gradient {
+          background: linear-gradient(90deg, #00d2ff 0%, #3a7bd5 100%);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      `}</style>
+    </>
   );
 };
 

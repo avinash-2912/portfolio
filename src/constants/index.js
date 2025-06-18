@@ -182,33 +182,13 @@ const experiences = [
 
 const testimonials = [
   {
-    testimonial: "This product has completely transformed the way we work. It's intuitive, efficient, and user-friendly. Highly recommend it!",
-    name: "John Doe",
-    designation: "CEO",
-    company: "Tech Solutions",
+    testimonial: "During his time as an intern at our company, Avinash demonstrated a high level of responsibility, sincerity, and flexibility in his work. He consistently approached his tasks with dedication and attention to detail. What stood out most was his proactive mindset — he didn’t just accept instructions blindly, but showed genuine concern for understanding why something might not work and actively suggested alternate solutions when needed. This problem-solving attitude and thoughtful approach made him a valuable contributor to the team.We appreciate his efforts and wish him the best in his future endeavors.",
+    name: "Vikash Kumar",
+    designation: "Director",
+    company: "Abhay Education Private Limited",
     image: "https://via.placeholder.com/150",
   },
-  {
-    testimonial: "The customer service is excellent. They always go above and beyond to help us with our needs. We've seen significant improvements in our workflow since we started using this.",
-    name: "Jane Smith",
-    designation: "Marketing Manager",
-    company: "Creative Agency",
-    image: "https://via.placeholder.com/150",
-  },
-  {
-    testimonial: "An amazing tool for our team! It has streamlined our processes and made collaboration so much easier. We couldn't ask for more.",
-    name: "Mark Johnson",
-    designation: "Product Manager",
-    company: "Innovation Corp",
-    image: "https://via.placeholder.com/150",
-  },
-  {
-    testimonial: "This product has completely transformed the way we work. It's intuitive, efficient, and user-friendly. Highly recommend it!",
-    name: "John Doe",
-    designation: "CEO",
-    company: "Tech Solutions",
-    image: "https://via.placeholder.com/150",
-  },
+  
 ];
 
 

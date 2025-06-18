@@ -105,8 +105,8 @@ const Testimonials = () => {
           </motion.div>
         </div>
 
-        <div className="px-8 pb-14 relative -mt-20">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="px-8 pb-8 relative -mt-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {getVisibleTestimonials().map((testimonial, index) => (
               <motion.div 
                 key={`${testimonial.name}-${currentPage}-${index}`}
@@ -120,7 +120,7 @@ const Testimonials = () => {
             ))}
           </div>
 
-          <div className="mt-8 flex justify-center items-center gap-4">
+          <div className="mt-16 flex justify-center items-center gap-4">
             <button
               onClick={handlePrev}
               className="bg-primary hover:bg-blue-600 p-3 rounded-full transition-all duration-300 shadow-md"
